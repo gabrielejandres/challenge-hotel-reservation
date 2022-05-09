@@ -43,7 +43,7 @@ const weekend = [ 'sat', 'sun' ]
 /* --- Functions --- */
 
 /* 
-    * Helper function for provide the corresponding day of the week given an input date
+    * Helper function that provides the corresponding day of the week given an input date
     * Input: Date in format '16Mar2009(mon)'
     * Output: The day of the week that was between parentheses in the input date
 */
@@ -53,7 +53,7 @@ function getDayOfWeek(date) {
 }
 
 /* 
-    * Helper function to find out what type of fee each day of the week will have (weekday or weekend fee)
+    * Helper function that finds out what type of fee each day of the week will have (weekday or weekend fee)
     * Input: Array with the days of the week
     * Output: Array with the types of fees to be charged
 */
@@ -68,7 +68,7 @@ function getFeeTypes(daysOfWeek) {
 }
 
 /* 
-    * Helper function to handle the input and return the data of interest
+    * Helper function that handles the input and return the data of interest
     * Input: String in format 'Regular: 16Mar2009(mon), 17Mar2009(tues), 18Mar2009(wed)'
     * Output: An object containing the type of customer and the days of the week that the customer wants to stay
 */
@@ -83,7 +83,7 @@ function handleInput(input) {
 }
 
 /* 
-    * Main function to get the cheapest hotel option for a given date
+    * Main function that gets the cheapest hotel option for a given date
     * Input: String in format 'Regular: 16Mar2009(mon), 17Mar2009(tues), 18Mar2009(wed)'
     * Output: The name of the cheapest hotel
 */
@@ -105,7 +105,7 @@ function getCheapestHotel (input) {
             totalFee += fees[feeType]
         })
 
-        const firstHotel = index === 0 // no caso do primeiro hotel precisamos sempre povoar nossa estrutura para termos com quem comparar
+        const firstHotel = index === 0 // in case of first hotel, we always need to populate our structure in order to have someone to compair
         const betterFee = cheapestHotel.totalFee > totalFee
         const equalFeeBetterRating = cheapestHotel.totalFee === totalFee && cheapestHotel.rating < hotel.rating
 
